@@ -37,6 +37,7 @@ dependencies:
   shared_preferences: ^2.0.6
   lint: ^1.5.3
   mocktail: ^0.1.4
+  data_connection_checker_tv: ^0.3.5-nullsafety
 
 dev_dependencies:
   flutter_test:
