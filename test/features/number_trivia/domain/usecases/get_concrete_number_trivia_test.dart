@@ -18,7 +18,7 @@ void main() {
   });
 
   const tNumber = 1;
-  final tNumberTrivia = NumberTrivia(number: 1, text: 'test');
+  const tNumberTrivia = NumberTrivia(number: 1, text: 'test');
 
   test(
     'should get trivia for the number from the repository',
@@ -32,13 +32,13 @@ void main() {
       // .thenAnswer((_) async => Right(tNumberTrivia));
 
       when(() => mockNumberTriviaRepository.getConcreteNumberTrivia(any()))
-          .thenAnswer((_) async => Right(tNumberTrivia));
+          .thenAnswer((_) async => const Right(tNumberTrivia));
 
       // The "act" phase of the test. Call the not-yet-existent method.
       final result = await usecase(const Params(number: tNumber));
 
       // UseCase should simply return whatever was returned from the Repository
-      expect(result, Right(tNumberTrivia));
+      expect(result, const Right(tNumberTrivia));
 
       // Verify that the method has been called on the Repository
 
