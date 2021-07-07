@@ -1,16 +1,61 @@
-# clean_architecture_tdd_course
+<p align="center">
+  <a href="https://flutter.io/">
+    <img src="https://diegolaballos.com/files/images/flutter-icon.jpg" alt="Logo" width=72 height=72>
+  </a>
 
-A new Flutter project.
+  <h3 align="center">Number Trivia App</h3>
 
-## Getting Started
+  <p align="center">
+    Number Trivia App using clean architecture and test driven development
+    <br>
+    Project made following Reso Coder's <a href="https://resocoder.com/category/tutorials/flutter/tdd-clean-architecture/">Clean Architecture TDD Course</a> 🎯
+    <br>
+    <br>
+    
+  </p>
+</p>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+<img src="https://i.imgur.com/t8BbG7x.png" alt="app 1" width="300"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Quick start
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Try this application!  
+[Download APK](https://github.com/lastra-dev/clean-architecture-tdd-course/releases)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Or use it as a template...
+***
+
+Get the Flutter Sdk: [official documentation](https://flutter.dev/docs/get-started/install).
+
+Clone this repository:
+```
+git clone https://github.com/lastra-dev/clean-architecture-tdd-course.git
+```
+
+Get dependencies inside project directory:
+```
+flutter pub get
+```
+
+## What's included
+
+:star: Bloc state management  
+:star: Mocktail tests for domain and data layers  
+:star: Clean architecture layered application  
+:star: Dependency injection with get it package  
+:star: Functional programming with dartz package  
+:star: Equality within classes with equatable package  
+:star: REST API with http package  
+:star: Exceptions handled with Failure classes  
+:star: Shared preferences to store latest trivia  
+:star: Clean UI  
+
+### Clean Architecture
+
+This repo is using Clean Architecture. The structure of the application is divided in layers making it easy to test, change dependencies and scale the app.  
+#### Reso Coder's Clean Architecture Diagram  
+![Reso Coder's Clean Architecture Diagram](https://i.imgur.com/wqTYfpi.png)
+#### Robert C. Martin's Clean Architecture Diagram
+![Robert C. Martin's Clean Architecture Diagram](https://i.imgur.com/6uzRuuN.jpg)
