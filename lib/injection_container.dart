@@ -16,7 +16,7 @@ import 'features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
 // Service Locator
 final sl = GetIt.instance;
 
-void init() {
+Future<void> init() async {
   //! Features - Number Trivia
   sl.registerFactory(() => NumberTriviaBloc(
         concrete: sl(),
@@ -48,7 +48,8 @@ void init() {
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 
   //! External
-  sl.registerLazySingleton(() async => SharedPreferences.getInstance());
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerSingletonAsync(() async => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => DataConnectionChecker());
 }
