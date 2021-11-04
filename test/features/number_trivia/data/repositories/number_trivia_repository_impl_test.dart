@@ -66,9 +66,10 @@ void main() {
       // don't know why this makes the test pass...
       when(() => mockRemoteDataSource.getConcreteNumberTrivia(tNumber))
           .thenAnswer((_) async => tNumberTriviaModel);
-      when(() => mockLocalDataSource
-              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-          .thenAnswer((_) async => tNumberTriviaModel);
+      when(
+        () => mockLocalDataSource
+            .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+      ).thenAnswer((_) async => tNumberTriviaModel);
       // act
       repository.getConcreteNumberTrivia(tNumber);
       // assert
@@ -82,9 +83,10 @@ void main() {
         // arrange
         when(() => mockRemoteDataSource.getConcreteNumberTrivia(tNumber))
             .thenAnswer((_) async => tNumberTriviaModel);
-        when(() => mockLocalDataSource
-                .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-            .thenAnswer((_) async => tNumberTriviaModel);
+        when(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        ).thenAnswer((_) async => tNumberTriviaModel);
         // act
         final result = await repository.getConcreteNumberTrivia(tNumber);
         // assert
@@ -98,15 +100,18 @@ void main() {
         // arrange
         when(() => mockRemoteDataSource.getConcreteNumberTrivia(tNumber))
             .thenAnswer((_) async => tNumberTriviaModel);
-        when(() => mockLocalDataSource
-                .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-            .thenAnswer((_) async => tNumberTriviaModel);
+        when(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        ).thenAnswer((_) async => tNumberTriviaModel);
         // act
         await repository.getConcreteNumberTrivia(tNumber);
         // assert
         verify(() => mockRemoteDataSource.getConcreteNumberTrivia(tNumber));
-        verify(() => mockLocalDataSource
-            .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel));
+        verify(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        );
       });
 
       test(
@@ -165,9 +170,10 @@ void main() {
       // don't know why this makes the test pass...
       when(() => mockRemoteDataSource.getRandomNumberTrivia())
           .thenAnswer((_) async => tNumberTriviaModel);
-      when(() => mockLocalDataSource
-              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-          .thenAnswer((_) async => tNumberTriviaModel);
+      when(
+        () => mockLocalDataSource
+            .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+      ).thenAnswer((_) async => tNumberTriviaModel);
       // act
       repository.getRandomNumberTrivia();
       // assert
@@ -181,9 +187,10 @@ void main() {
         // arrange
         when(() => mockRemoteDataSource.getRandomNumberTrivia())
             .thenAnswer((_) async => tNumberTriviaModel);
-        when(() => mockLocalDataSource
-                .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-            .thenAnswer((_) async => tNumberTriviaModel);
+        when(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        ).thenAnswer((_) async => tNumberTriviaModel);
         // act
         final result = await repository.getRandomNumberTrivia();
         // assert
@@ -197,15 +204,18 @@ void main() {
         // arrange
         when(() => mockRemoteDataSource.getRandomNumberTrivia())
             .thenAnswer((_) async => tNumberTriviaModel);
-        when(() => mockLocalDataSource
-                .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel))
-            .thenAnswer((_) async => tNumberTriviaModel);
+        when(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        ).thenAnswer((_) async => tNumberTriviaModel);
         // act
         await repository.getRandomNumberTrivia();
         // assert
         verify(() => mockRemoteDataSource.getRandomNumberTrivia());
-        verify(() => mockLocalDataSource
-            .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel));
+        verify(
+          () => mockLocalDataSource
+              .cacheNumberTrivia(tNumberTrivia as NumberTriviaModel),
+        );
       });
 
       test(

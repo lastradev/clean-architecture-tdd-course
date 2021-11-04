@@ -52,8 +52,9 @@ class NumberTriviaPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               SizedBox(
-                  height: MediaQuery.of(context).size.height / 3 - 31,
-                  child: Image.asset('assets/images/background.png')),
+                height: MediaQuery.of(context).size.height / 3 - 31,
+                child: Image.asset('assets/images/background.png'),
+              ),
             ],
           ),
         ),

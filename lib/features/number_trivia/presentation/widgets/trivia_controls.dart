@@ -21,16 +21,19 @@ class _TriviaControlsState extends State<TriviaControls> {
     return Column(
       children: [
         TextField(
-            controller: controller,
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: 'Input a Number'),
-            onChanged: (value) {
-              inputStr = value;
-            },
-            onSubmitted: (_) {
-              dispatchConcrete();
-            }),
+          controller: controller,
+          keyboardType: TextInputType.number,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Input a Number',
+          ),
+          onChanged: (value) {
+            inputStr = value;
+          },
+          onSubmitted: (_) {
+            dispatchConcrete();
+          },
+        ),
         const SizedBox(height: 10),
         Row(
           children: [

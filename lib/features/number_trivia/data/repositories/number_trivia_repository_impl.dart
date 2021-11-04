@@ -12,15 +12,15 @@ import '../models/number_trivia_model.dart';
 typedef ConcreteOrRandomChooser = Future<NumberTrivia> Function();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
-  final NumberTriviaRemoteDataSource remoteDataSource;
-  final NumberTriviaLocalDataSource localDataSource;
-  final NetworkInfo networkInfo;
-
   NumberTriviaRepositoryImpl({
     required this.remoteDataSource,
     required this.localDataSource,
     required this.networkInfo,
   });
+
+  final NumberTriviaRemoteDataSource remoteDataSource;
+  final NumberTriviaLocalDataSource localDataSource;
+  final NetworkInfo networkInfo;
 
   @override
   Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
@@ -35,7 +35,8 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   }
 
   Future<Either<Failure, NumberTrivia>> _getTrivia(
-      ConcreteOrRandomChooser getConcreteOrRandom) async {
+    ConcreteOrRandomChooser getConcreteOrRandom,
+  ) async {
     if (await networkInfo.isConnected) {
       try {
         final remoteTrivia = await getConcreteOrRandom();

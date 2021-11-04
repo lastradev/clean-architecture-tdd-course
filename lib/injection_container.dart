@@ -18,11 +18,13 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   //! Features - Number Trivia
-  sl.registerFactory(() => NumberTriviaBloc(
-        concrete: sl(),
-        random: sl(),
-        inputConverter: sl(),
-      ));
+  sl.registerFactory(
+    () => NumberTriviaBloc(
+      concrete: sl(),
+      random: sl(),
+      inputConverter: sl(),
+    ),
+  );
 
   // Use cases
   sl.registerLazySingleton(() => GetConcreteNumberTrivia(sl()));
@@ -30,18 +32,21 @@ Future<void> init() async {
 
   // Repository
   sl.registerLazySingleton<NumberTriviaRepository>(
-      () => NumberTriviaRepositoryImpl(
-            remoteDataSource: sl(),
-            localDataSource: sl(),
-            networkInfo: sl(),
-          ));
+    () => NumberTriviaRepositoryImpl(
+      remoteDataSource: sl(),
+      localDataSource: sl(),
+      networkInfo: sl(),
+    ),
+  );
 
   // Data sources
   sl.registerLazySingleton<NumberTriviaRemoteDataSource>(
-      () => NumberTriviaRemoteDataSourceImpl(client: sl()));
+    () => NumberTriviaRemoteDataSourceImpl(client: sl()),
+  );
 
   sl.registerLazySingleton<NumberTriviaLocalDataSource>(
-      () => NumberTriviaLocalDataSourceImpl(sharedPreferences: sl()));
+    () => NumberTriviaLocalDataSourceImpl(sharedPreferences: sl()),
+  );
 
   //! Core
   sl.registerLazySingleton(() => InputConverter());

@@ -18,12 +18,14 @@ void main() {
   setUp(() {
     mockSharedPreferences = MockSharedPreferences();
     dataSource = NumberTriviaLocalDataSourceImpl(
-        sharedPreferences: mockSharedPreferences);
+      sharedPreferences: mockSharedPreferences,
+    );
   });
 
   group('getLastNumberTrivia', () {
     final tNumberTriviaModel = NumberTriviaModel.fromJson(
-        json.decode(fixture('trivia_cached.json')) as Map<String, dynamic>);
+      json.decode(fixture('trivia_cached.json')) as Map<String, dynamic>,
+    );
 
     test(
         'should return NumberTrivia from SharedPreferences when there is one in cache',

@@ -67,7 +67,8 @@ void main() {
       // act
       bloc.add(const GetTriviaForConcreteNumber(tNumberString));
       await untilCalled(
-          () => mockInputConverter.stringToUnsignedInteger(any()));
+        () => mockInputConverter.stringToUnsignedInteger(any()),
+      );
       // assert
       verify(() => mockInputConverter.stringToUnsignedInteger(tNumberString));
     });
@@ -92,8 +93,9 @@ void main() {
       bloc.add(const GetTriviaForConcreteNumber(tNumberString));
       await untilCalled(() => mockGetConcreteNumberTrivia(any()));
       // assert
-      verify(() =>
-          mockGetConcreteNumberTrivia(const Params(number: tNumberParsed)));
+      verify(
+        () => mockGetConcreteNumberTrivia(const Params(number: tNumberParsed)),
+      );
     });
 
     test('should emit [Loading, Loaded] when data is gotten successfully',

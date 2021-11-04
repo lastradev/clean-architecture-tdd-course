@@ -12,13 +12,13 @@ class Empty extends NumberTriviaState {}
 class Loading extends NumberTriviaState {}
 
 class Loaded extends NumberTriviaState {
-  final NumberTrivia trivia;
-
   const Loaded({required this.trivia});
+
+  final NumberTrivia trivia;
 }
 
 class Error extends NumberTriviaState {
-  final String message;
-
   const Error({required this.message});
+
+  final String message;
 }

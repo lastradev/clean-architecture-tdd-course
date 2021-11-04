@@ -3,8 +3,8 @@ import 'package:clean_architecture_tdd_course/features/number_trivia/domain/enti
 import 'package:clean_architecture_tdd_course/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:clean_architecture_tdd_course/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
 import 'package:dartz/dartz.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
 
 class MockNumberTriviaRepository extends Mock
     implements NumberTriviaRepository {}

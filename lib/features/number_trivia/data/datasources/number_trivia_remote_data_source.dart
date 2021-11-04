@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:clean_architecture_tdd_course/core/error/exception.dart';
 import 'package:http/http.dart' as http;
+
+import '../../../../core/error/exception.dart';
 import '../models/number_trivia_model.dart';
 
 abstract class NumberTriviaRemoteDataSource {
@@ -17,9 +18,9 @@ abstract class NumberTriviaRemoteDataSource {
 }
 
 class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
-  final http.Client client;
-
   NumberTriviaRemoteDataSourceImpl({required this.client});
+
+  final http.Client client;
 
   @override
   Future<NumberTriviaModel> getConcreteNumberTrivia(int number) async =>
@@ -37,7 +38,8 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
     );
     if (response.statusCode == 200) {
       return NumberTriviaModel.fromJson(
-          json.decode(response.body) as Map<String, dynamic>);
+        json.decode(response.body) as Map<String, dynamic>,
+      );
     } else {
       throw ServerException();
     }

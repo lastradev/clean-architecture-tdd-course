@@ -14,9 +14,9 @@ abstract class NumberTriviaLocalDataSource {
 const cachedNumberTrivia = 'CACHED_NUMBER_TRIVIA';
 
 class NumberTriviaLocalDataSourceImpl implements NumberTriviaLocalDataSource {
-  final SharedPreferences sharedPreferences;
-
   NumberTriviaLocalDataSourceImpl({required this.sharedPreferences});
+
+  final SharedPreferences sharedPreferences;
 
   @override
   Future<NumberTriviaModel> getLastNumberTrivia() {

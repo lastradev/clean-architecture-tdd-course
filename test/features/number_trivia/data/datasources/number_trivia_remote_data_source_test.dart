@@ -4,8 +4,8 @@ import 'package:clean_architecture_tdd_course/core/error/exception.dart';
 import 'package:clean_architecture_tdd_course/features/number_trivia/data/datasources/number_trivia_remote_data_source.dart';
 import 'package:clean_architecture_tdd_course/features/number_trivia/data/models/number_trivia_model.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:http/http.dart' as http;
+import 'package:mocktail/mocktail.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 
@@ -42,12 +42,15 @@ void main() {
       // act
       dataSource.getConcreteNumberTrivia(tNumber);
       // assert
-      verify(() => mockHttpClient
-          .get(url, headers: {'Content-Type': 'application/json'}));
+      verify(
+        () => mockHttpClient
+            .get(url, headers: {'Content-Type': 'application/json'}),
+      );
     });
 
     final tNumberTriviaModel = NumberTriviaModel.fromJson(
-        json.decode(fixture('trivia.json')) as Map<String, dynamic>);
+      json.decode(fixture('trivia.json')) as Map<String, dynamic>,
+    );
 
     test('should return NumberTrivia when the response code is 200', () async {
       // arrange
@@ -81,12 +84,15 @@ void main() {
       // act
       dataSource.getRandomNumberTrivia();
       // assert
-      verify(() => mockHttpClient
-          .get(url, headers: {'Content-Type': 'application/json'}));
+      verify(
+        () => mockHttpClient
+            .get(url, headers: {'Content-Type': 'application/json'}),
+      );
     });
 
     final tNumberTriviaModel = NumberTriviaModel.fromJson(
-        json.decode(fixture('trivia.json')) as Map<String, dynamic>);
+      json.decode(fixture('trivia.json')) as Map<String, dynamic>,
+    );
 
     test('should return NumberTrivia when the response code is 200', () async {
       // arrange
