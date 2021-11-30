@@ -6,7 +6,7 @@
   <h3 align="center">Number Trivia App</h3>
 
   <p align="center">
-    Number Trivia App using clean architecture and test driven development
+    Number Trivia App using clean architecture and test-driven development
     <br>
     Project made following Reso Coder's <a href="https://resocoder.com/category/tutorials/flutter/tdd-clean-architecture/">Clean Architecture TDD Course</a> 🎯
     <br>
@@ -19,7 +19,7 @@
 <img src="https://i.imgur.com/t8BbG7x.png" alt="app 1" width="300"/>
 </p>
 
-## Quick start
+## Quickstart
 
 Try this application!  
 [Download APK](https://github.com/lastra-dev/clean-architecture-tdd-course/releases)
@@ -34,7 +34,7 @@ Clone this repository:
 git clone https://github.com/lastra-dev/clean-architecture-tdd-course.git
 ```
 
-Get dependencies inside project directory:
+Get dependencies inside the project directory:
 ```
 flutter pub get
 ```
@@ -54,7 +54,7 @@ flutter pub get
 
 ### Clean Architecture
 
-This repo is using Clean Architecture. The structure of the application is divided in layers making it easy to test, change dependencies and scale the app.  
+This repo is using Clean Architecture. The structure of the application is divided into layers making it easy to test, change dependencies, and scale the app.  
 #### Reso Coder's Clean Architecture Diagram  
 ![Reso Coder's Clean Architecture Diagram](https://i.imgur.com/wqTYfpi.png)
 #### Robert C. Martin's Clean Architecture Diagram
